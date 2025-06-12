@@ -1,0 +1,46 @@
+---
+title: "CE305_EST_AMOSTRAGEM"
+format: html
+---
+
+# Amostragem Aleatória Estratificada Simples
+
+### Semana 8
+
+##### **Definição de uma Amostra Aleatória Estratificada Simples**
+
+Amostra Aleatória Estratificada é uma técnica de amostragem probabilística onde a população é dividida em grupos homogêneos chamados estratos, e depois se sorteia uma amostra aleatoria dentro de cada estrato.
+
+##### **Por que usar?**
+
+Porque às vezes a população é heterogênea como um todo, mas homogênea dentro de certos grupos (os estratos). Ao amostrar cada grupo separadamente, você:
+
+* Garante representatividade de todos os subgrupos
+
+* Reduz a variabilidade nas estimativas
+
+* Pode ter maior precisão com uma amostra do mesmo tamanho
+
+Vendo de forma visual como que é a ideia de uma Amostragem Aleatória Estratificada Simples:
+
+![Imagem Ilustrativa](https://bookdown.org/luisfca/docs/img/cap_a_estratificada.PNG)
+
+##### **Objetivo da aula 01 - Semana 8**
+
+Objetivo dessa aula é estimar o $\bar{Y}$, que representa a média populacional.
+
+Para estimar a média das observações do estrato usamos a seguinte fórmula:
+
+* $\bar{Y}_h = \frac{\sum_{i=1}^{n_{h}}{y_{hi}}}{N_h},\quad \text{Representa a Média das Observações do Estrato h}$
+
+
+Para estimar a variação das observações do estrato usamos a seguinte fórmula:
+
+---  
+
+### Semana 9
+# 📌 Amostragem Aleatória Estratificada
+
+$$
+S_h^2 = \frac{1}{N_h - 1} \left( \sum_{i=1}^{N_h} y_{hi}^2 - \frac{\left( \sum_{i=1}^{N_h} y_{hi} \right)^2}{N_h} \right)
+$$
