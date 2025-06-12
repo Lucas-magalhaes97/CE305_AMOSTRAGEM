@@ -120,10 +120,21 @@ window.Quarto = {
 <h5 class="anchored" data-anchor-id="objetivo-da-aula-01---semana-8"><strong>Objetivo da aula 01 - Semana 8</strong></h5>
 <p>Objetivo dessa aula é estimar o <span class="math inline">\(\bar{Y}\)</span>, que representa a média populacional.</p>
 <p>Para estimar a média das observações do estrato usamos a seguinte fórmula:</p>
-<ul>
-<li><span class="math inline">\(\bar{Y}_h = \frac{\sum_{i=1}^{n_{h}}{y_{hi}}}{N_h},\quad \text{Representa a Média das Observações do Estrato h}\)</span></li>
-</ul>
-<p>Para estimar a variação das observações do estrato usamos a seguinte fórmula:</p>
+<p><span class="math display">\[
+\bar{Y}_h = \frac{\sum_{i=1}^{N_h}{y_{hi}}}{N_h},\quad \text{representa a média das observações do estrato h}
+\]</span></p>
+<p>Para estimar a variância das observações do estrato usamos a seguinte fórmula: <span class="math display">\[
+\S^2 = \frac{{\sum_{i=1}^{N_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{N_h}{y_{hi}})^2}{N_h}}}}}{N_h - 1}, \quad \text{representa a variância das observações do estrato h}
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+L     &amp;= \text{número de estratos} \\
+h     &amp;= 1, 2, \dots, L \\
+N_h   &amp;= \text{tamanho do estrato } h \\
+n_h   &amp;= \text{tamanho da amostra no estrato } h \\
+a_h   &amp;= \frac{n_h}{N_h} = \text{fração amostral do estrato } h
+\end{align*}
+\]</span></p>
 <hr>
 </section>
 </section>

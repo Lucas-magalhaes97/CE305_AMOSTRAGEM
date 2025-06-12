@@ -31,10 +31,26 @@ Objetivo dessa aula é estimar o $\bar{Y}$, que representa a média populacional
 
 Para estimar a média das observações do estrato usamos a seguinte fórmula:
 
-* $\bar{Y}_h = \frac{\sum_{i=1}^{n_{h}}{y_{hi}}}{N_h},\quad \text{Representa a Média das Observações do Estrato h}$
+$$
+\bar{Y}_h = \frac{\sum_{i=1}^{N_h}{y_{hi}}}{N_h},\quad \text{representa a média das observações do estrato } h
+$$
 
 
-Para estimar a variação das observações do estrato usamos a seguinte fórmula:
+Para estimar a variância das observações do estrato usamos a seguinte fórmula:
+$$
+\S^2 = \frac{{\sum_{i=1}^{N_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{N_h}{y_{hi}})^2}{N_h}}}}}{N_h - 1}, \quad \text{representa a variância das observações do estrato } h
+$$ 
+
+$$
+\begin{align*}
+N_h   &= \text{tamanho do estrato } h \\
+n_h   &= \text{tamanho da amostra no estrato } h \\
+\bar{Y}_h &= \text{média no estrato }  h \\
+\bar{y}_h &= \frac{\sum_{i=1}^{n_h}{y_{hi}}}{n_h}, \quad \text{média amostral do estrato} h \\
+a_h   &= \frac{n_h}{N_h} = \text{fração amostral do estrato } h
+\end{align*}
+$$
+
 
 ---  
 
