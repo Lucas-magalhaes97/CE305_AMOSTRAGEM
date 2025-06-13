@@ -96,6 +96,8 @@ window.Quarto = {
 <h1>Amostragem Aleatória Estratificada Simples</h1>
 <section id="semana-8" class="level3">
 <h3 class="anchored" data-anchor-id="semana-8">Semana 8</h3>
+<section id="aula-01" class="level4">
+<h4 class="anchored" data-anchor-id="aula-01">Aula 01</h4>
 <section id="definição-de-uma-amostra-aleatória-estratificada-simples" class="level5">
 <h5 class="anchored" data-anchor-id="definição-de-uma-amostra-aleatória-estratificada-simples"><strong>Definição de uma Amostra Aleatória Estratificada Simples</strong></h5>
 <p>Amostra Aleatória Estratificada é uma técnica de amostragem probabilística onde a população é dividida em grupos homogêneos chamados estratos, e depois se sorteia uma amostra aleatoria dentro de cada estrato.</p>
@@ -121,21 +123,262 @@ window.Quarto = {
 <p>Objetivo dessa aula é estimar o <span class="math inline">\(\bar{Y}\)</span>, que representa a média populacional.</p>
 <p>Para estimar a média das observações do estrato usamos a seguinte fórmula:</p>
 <p><span class="math display">\[
-\bar{Y}_h = \frac{\sum_{i=1}^{N_h}{y_{hi}}}{N_h},\quad \text{representa a média das observações do estrato h}
+\bar{Y}_h = \frac{\sum_{i=1}^{N_h}{y_{hi}}}{N_h},\quad \text{representa a média das observações do estrato } h
 \]</span></p>
 <p>Para estimar a variância das observações do estrato usamos a seguinte fórmula: <span class="math display">\[
-\S^2 = \frac{{\sum_{i=1}^{N_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{N_h}{y_{hi}})^2}{N_h}}}}}{N_h - 1}, \quad \text{representa a variância das observações do estrato h}
+S_h^2 = \frac{{\sum_{i=1}^{N_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{N_h}{y_{hi}})^2}{N_h}}}}}{N_h - 1}, \quad \text{representa a variância das observações do estrato } h
 \]</span></p>
-<p><span class="math display">\[
+<p>Logo abaixo são apresentados alguns componentes para o cálculo da média do estrato <span class="math inline">\(\bar{Y}_h\)</span> e a variância do estrato <span class="math inline">\(S_h^2\)</span>: <span class="math display">\[
 \begin{align*}
-L     &amp;= \text{número de estratos} \\
-h     &amp;= 1, 2, \dots, L \\
 N_h   &amp;= \text{tamanho do estrato } h \\
 n_h   &amp;= \text{tamanho da amostra no estrato } h \\
+\bar{Y}_h &amp;= \text{média no estrato }  h \\
+\bar{y}_h &amp;= \frac{\sum_{i=1}^{n_h}{y_{hi}}}{n_h}, \quad \text{média amostral do estrato} h \\
+s_h^2 &amp;= \frac{{\sum_{i=1}^{n_h}{y_{hi}^{2}-{\frac{(\sum_{i=1}^{n_h}{y_{hi}})^2}{n_h}}}}}{n_h - 1}, \quad \text{representa a variância das observações na amostra} \\
 a_h   &amp;= \frac{n_h}{N_h} = \text{fração amostral do estrato } h
 \end{align*}
 \]</span></p>
+</section>
+</section>
+<section id="aula-02" class="level4">
+<h4 class="anchored" data-anchor-id="aula-02">Aula 02</h4>
+<section id="estimador-de-bary" class="level5">
+<h5 class="anchored" data-anchor-id="estimador-de-bary">Estimador de <span class="math inline">\(\bar{Y}\)</span></h5>
+<p>Na AAE (Amostragem Aleatória Estratificada), temos:</p>
+<p><span class="math display">\[
+\bar{Y}_{st} = \sum_{h=1}^{L} W_h \bar{y}_h
+\]</span></p>
+<p>onde:</p>
+<p><span class="math display">\[
+W_h = \frac{N_h}{N}
+\]</span></p>
 <hr>
+</section>
+<section id="teorema-2-aae" class="level5">
+<h5 class="anchored" data-anchor-id="teorema-2-aae">Teorema 2 (AAE)</h5>
+<p><span class="math inline">\(\bar{Y}_{st}\)</span> é um estimador não-viesado de <span class="math inline">\(\bar{Y}\)</span><br>
+se o plano de amostragem for o de AAS (Amostragem Aleatória Simples) dentro de cada estrato.</p>
+<hr>
+</section>
+<section id="prova" class="level5">
+<h5 class="anchored" data-anchor-id="prova">Prova:</h5>
+<p><span class="math display">\[
+\mathbb{E}[\bar{Y}_{st}] = \mathbb{E} \left[ \sum_{h=1}^{L} W_h \bar{y}_h \right]
+\]</span></p>
+<p><span class="math display">\[
+= \sum_{h=1}^{L} W_h \mathbb{E}[\bar{y}_h]
+\]</span></p>
+<p><span class="math display">\[
+= \sum_{h=1}^{L} W_h \bar{Y}_h
+\]</span></p>
+<p><span class="math display">\[
+= \sum_{h=1}^{L} \frac{N_h}{N} \bar{Y}_h
+\]</span></p>
+<p><span class="math display">\[
+= \frac{1}{N} \sum_{h=1}^{L} N_h \bar{Y}_h
+\]</span></p>
+<p><span class="math display">\[
+= \frac{1}{N} \sum_{i=1}^{N} y_i = \bar{Y}
+\]</span></p>
+</section>
+</section>
+<section id="aula-03" class="level4">
+<h4 class="anchored" data-anchor-id="aula-03">Aula 03</h4>
+<section id="teorema-2-aae-1" class="level5">
+<h5 class="anchored" data-anchor-id="teorema-2-aae-1">Teorema 2 (AAE)</h5>
+<p>Se as amostras são selecionadas independentemente em cada estrato<br>
+de acordo com o plano de AAS, então:</p>
+<p><span class="math display">\[
+\mathrm{V}[\bar{y}_{st}] = \frac{1}{N^2} \sum_{h=1}^{L} N_h (N_h - n_h) \frac{S_h^2}{n_h}
+\]</span></p>
+<hr>
+</section>
+<section id="prova-1" class="level5">
+<h5 class="anchored" data-anchor-id="prova-1">🧠 Prova:</h5>
+<p><span class="math display">\[
+\mathrm{V}[\bar{y}_{st}]
+= \mathrm{V} \left[ \sum_{h=1}^{L} W_h \bar{y}_h \right]
+= \sum_{h=1}^{L} W_h^2 \mathrm{V}[\bar{y}_h] + 2 \sum_{h &lt; d} W_h W_d \mathrm{Cov}[\bar{y}_h, \bar{y}_d]
+\]</span></p>
+<p>Como os estratos são independentes,<br>
+<span class="math inline">\(\mathrm{Cov}[\bar{y}_h, \bar{y}_d] = 0\)</span> para <span class="math inline">\(h \ne d\)</span>:</p>
+<p><span class="math display">\[
+\Rightarrow \mathrm{V}[\bar{y}_{st}]
+= \sum_{h=1}^{L} W_h^2 \mathrm{V}[\bar{y}_h]
+\]</span></p>
+<p>Pelo Teorema 2 da AAS:</p>
+<p><span class="math display">\[
+\mathrm{V}[\bar{y}_h] = \frac{N_h - n_h}{N_h} \cdot \frac{S_h^2}{n_h}
+\]</span></p>
+<p>Substituindo:</p>
+<p><span class="math display">\[
+\mathrm{V}[\bar{y}_{st}]
+= \sum_{h=1}^{L} \left( \frac{N_h}{N} \right)^2 \cdot \frac{N_h - n_h}{N_h} \cdot \frac{S_h^2}{n_h}
+= \sum_{h=1}^{L} \frac{N_h (N_h - n_h)}{N^2} \cdot \frac{S_h^2}{n_h}
+\]</span></p>
+<hr>
+</section>
+<section id="estimador-da-variância" class="level5">
+<h5 class="anchored" data-anchor-id="estimador-da-variância">Estimador da variância</h5>
+<p>Pelo Teorema 3 (AAS), se <span class="math inline">\(S_h^2\)</span> é um estimador não-viesado da variância no estrato:</p>
+<p><span class="math display">\[
+\widehat{\mathrm{V}}[\bar{y}_{st}]
+= \frac{1}{N^2} \sum_{h=1}^{L} N_h (N_h - n_h) \frac{S_h^2}{n_h}
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança" class="level5">
+<h5 class="anchored" data-anchor-id="intervalo-de-confiança">Intervalo de Confiança</h5>
+<p>Se <span class="math inline">\(E[\widehat{\mathrm{V}}(\bar{y}_{st})] = \mathrm{V}[\bar{y}_{st}]\)</span>, então:</p>
+<p><span class="math display">\[
+\bar{y}_{st} \pm t_{(1 - \alpha/2)} \cdot \sqrt{\widehat{\mathrm{V}}[\bar{y}_{st}]}
+\]</span></p>
+<hr>
+</section>
+<section id="conclusão" class="level5">
+<h5 class="anchored" data-anchor-id="conclusão">✅ Conclusão:</h5>
+<p><span class="math display">\[
+\mathbb{E}[\bar{Y}_{st}] = \bar{Y}
+\]</span></p>
+<p>Ou seja, <span class="math inline">\(\bar{Y}_{st}\)</span> é não-viesado.</p>
+</section>
+</section>
+<section id="aula-04" class="level4">
+<h4 class="anchored" data-anchor-id="aula-04">Aula 04</h4>
+<section id="estimativa-do-total-de-empregados-em-microempresas" class="level5">
+<h5 class="anchored" data-anchor-id="estimativa-do-total-de-empregados-em-microempresas">Estimativa do total de empregados em microempresas</h5>
+<p><strong>Objetivo:</strong> Estimar o número total de empregados em microempresas.<br>
+<strong>População total:</strong> <span class="math inline">\(N = 12\,000\)</span> distribuídos em 4 regiões.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 15%">
+<col style="width: 10%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Região</th>
+<th><span class="math inline">\(N_h\)</span></th>
+<th><span class="math inline">\(n_h\)</span></th>
+<th><span class="math inline">\(\sum y_{hi}\)</span></th>
+<th><span class="math inline">\(\sum y_{hi}^2\)</span></th>
+<th><span class="math inline">\(\bar{Y}_h\)</span></th>
+<th><span class="math inline">\(S_h^2\)</span></th>
+<th><span class="math inline">\(W_h\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td>3000</td>
+<td>50</td>
+<td>750</td>
+<td>3845</td>
+<td>5</td>
+<td>0.6376</td>
+<td>0.25</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td>1500</td>
+<td>50</td>
+<td>150</td>
+<td>452</td>
+<td>3</td>
+<td>0.6408</td>
+<td>0.13</td>
+</tr>
+<tr class="odd">
+<td>III</td>
+<td>5500</td>
+<td>200</td>
+<td>900</td>
+<td>4100</td>
+<td>4.5</td>
+<td>0.2513</td>
+<td>0.46</td>
+</tr>
+<tr class="even">
+<td>IV</td>
+<td>2000</td>
+<td>100</td>
+<td>350</td>
+<td>1274</td>
+<td>3.5</td>
+<td>0.1494</td>
+<td>0.17</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td>12000</td>
+<td>500</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="estimador-da-média-estratificada" class="level5">
+<h5 class="anchored" data-anchor-id="estimador-da-média-estratificada">Estimador da média estratificada</h5>
+<p><span class="math display">\[
+\bar{y}_{st} = 0{,}25 \cdot 5 + 0{,}13 \cdot 3 + 0{,}46 \cdot 4{,}5 + 0{,}17 \cdot 3{,}5 = 4{,}270833
+\]</span></p>
+<hr>
+</section>
+<section id="estimador-do-total" class="level5">
+<h5 class="anchored" data-anchor-id="estimador-do-total">Estimador do total</h5>
+<p><span class="math display">\[
+\hat{Y}_{st} = N \cdot \bar{y}_{st} = 12\,000 \cdot 4{,}270833 = 51\,250
+\]</span></p>
+<hr>
+</section>
+<section id="estimativa-da-variância-do-estimador" class="level5">
+<h5 class="anchored" data-anchor-id="estimativa-da-variância-do-estimador">Estimativa da variância do estimador</h5>
+<p><span class="math display">\[
+\widehat{V}[\bar{y}_{st}] = \frac{1}{12\,000^2}
+\left[
+3000(3000 - 50) \cdot \frac{0{,}6376}{50}
++ \dots
++ 2000(2000 - 100) \cdot \frac{0{,}1494}{100}
+\right]
+= 0{,}00065
+\]</span></p>
+<hr>
+</section>
+<section id="erro-padrão" class="level5">
+<h5 class="anchored" data-anchor-id="erro-padrão">Erro padrão</h5>
+<p><span class="math display">\[
+\widehat{EP}[\bar{y}_{st}] = \sqrt{0{,}00065} \approx 0{,}0255
+\]</span></p>
+<hr>
+</section>
+<section id="intervalo-de-confiança-95" class="level5">
+<h5 class="anchored" data-anchor-id="intervalo-de-confiança-95">Intervalo de Confiança (95%)</h5>
+<p>Graus de liberdade:<br>
+<span class="math display">\[
+GL = 500 - 4 = 496 \Rightarrow t_{0{,}975, \, 496} \approx 1{,}96
+\]</span></p>
+<p><span class="math display">\[
+\bar{y}_{st} \pm t \cdot \widehat{EP}[\bar{y}_{st}]
+= 4{,}270833 \pm 1{,}96 \cdot 0{,}0255
+= (4{,}2207;\, 4{,}3208)
+\]</span></p>
+<p>Multiplicando pelo total da população:</p>
+<p><span class="math display">\[
+IC_{95\%}(\hat{Y}_{st}) =
+(4{,}2207 \cdot 12\,000,\; 4{,}3208 \cdot 12\,000) = (50\,649;\; 51\,850)
+\]</span></p>
+<hr>
+</section>
 </section>
 </section>
 <section id="semana-9" class="level3">
